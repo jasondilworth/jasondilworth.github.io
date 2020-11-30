@@ -1,0 +1,153 @@
+*{
+    margin:0px;
+    padding:0px;
+        font-family:array-mono, serif;
+    font-weight:100;
+    color:#777;
+}
+body{
+    background: #291D12;
+      
+
+}
+
+
+nav{
+    grid-area:navigation;
+    background-color:#000;
+    
+    opacity: .7;
+    position:fixed;
+    
+}
+
+#wrapper{
+    width:auto;
+    min-width:300px;
+    margin:auto;
+    padding:40px;
+}
+
+#navigation{
+    grid-area:navigation;
+    min-height:40px;
+    padding:5px;
+
+    }
+
+
+#hero{
+    min-height:300px;
+    grid-area:hero;
+}
+
+#maincontent{
+    min-height:300px;
+    grid-area:maincontent;
+}
+
+
+
+footer{
+    background-color:#000;
+    opacity: .7;
+    position: fixed;
+    left:0px;
+    bottom:0px;
+}
+
+article{
+    border-top: 3px solid;
+    border-image:linear-gradient(45deg, rgb(240, 56, 0), rgb(250,224,66));
+    border-image-slice: 1;
+    padding:.4em;
+    vertical-align: text-top;
+    margin-bottom:1.4em;
+}
+
+ul li{
+    list-style-type: none;
+}
+
+
+
+.hero{
+    size:larger;
+}
+
+
+@supports (grid-area: auto){
+
+	#wrapper{
+	display:grid;
+	grid-template-columns: 1fr 6fr 2fr;
+	grid-template-areas: 
+    ". navigation navigation"
+    "hero hero sidebar"
+	"maincontent maincontent sidebar "
+    ". footer footer";
+    gap:20px;
+    }
+}
+
+    @media only screen and (max-width: 600px) {
+        #wrapper {
+            display:grid;
+            grid-template-columns: 1fr;
+            grid-template-areas: 
+            "navigation"
+            "hero"
+            "maincontent"
+            "sidebar"
+            "footer";
+                                
+        }
+
+        #maincontent{
+            min-height:10px;
+        }
+
+
+    }
+
+
+    #sidebar{
+        grid-area:sidebar;
+    }
+
+    .page-footer{
+        grid-area:footer;
+    }
+    
+
+
+    /* TYPOGRAPHY */
+
+    a{
+        color:orangered;
+        text-decoration:none;
+    }
+
+
+    a:hover{
+        color:rgb(255, 153, 0);
+    }
+
+
+    p{
+        margin:.4em;
+        line-height: 120%;
+    }
+
+   
+
+   h4{
+       margin-top:1.4em;
+       border-top:.5px solid rgb(194, 214, 13);
+   }
+
+
+   .biblio{
+       margin-top:1.4em;
+       border-top: 1px solid #777;
+   }
